@@ -37,12 +37,12 @@ public class SceneMgr
     /// </summary>
     internal struct sceneCache
     {
-        internal string sceneName;
+        internal SceneType sceneType;
         internal object[] sceneDates;
 
-        internal sceneCache(string name, object[] dates)
+        internal sceneCache(SceneType type, object[] dates)
         {
-            sceneName = name;
+            sceneType = type;
             sceneDates = dates;
         }
     }
@@ -53,17 +53,6 @@ public class SceneMgr
     private List<sceneCache> sceneList;
 
     #endregion
-
-    /// <summary>
-    /// 获取到上一个场景
-    /// </summary>
-    /// <returns></returns>
-    private sceneCache GetPrveScene()
-    {
-        sceneCache sc = sceneList[sceneList.Count - 2];
-        sceneList.RemoveAt(sceneList.Count - 1);
-        return sc;
-    }
     
     #region 切换场景方法
 
@@ -75,9 +64,35 @@ public class SceneMgr
     public void Sequencer(SceneType sceneType, params object[] sceneDates)
     {
         string name = sceneType.ToString();
-        InitScene(name, sceneDates);
+        GameObject scene = new GameObject(name);
+        scene.transform.parent = parentObj;
+        scene.transform.localPosition = Vector3.zero;
+        scene.transform.localEulerAngles = Vector3.zero;
+        scene.transform.localScale = Vector3.one;
+        SceneBase sb = scene.AddComponent(Type.GetType(name)) as SceneBase;
+        sb.sceneInit(sceneDates);
 
-        sceneList.Add(new sceneCache(name, sceneDates));
+        sceneList.Add(new sceneCache(sceneType, sceneDates));
+
+        if (prevScene != null)
+        {
+            UnityEngine.Object.Destroy(prevScene);
+        }
+
+        prevScene = scene;
+
+        
+    }
+
+    /// <summary>
+    /// 获取到上一个场景
+    /// </summary>
+    /// <returns></returns>
+    private sceneCache GetPrveScene()
+    {
+        sceneCache sc = sceneList[sceneList.Count - 2];
+        sceneList.RemoveRange(sceneList.Count - 2, 2);
+        return sc;
     }
 
     /// <summary>
@@ -87,32 +102,9 @@ public class SceneMgr
     {
         sceneCache sc = GetPrveScene();
 
-        string name = sc.sceneName;
+        SceneType sceneType = sc.sceneType;
         object[] sceneDates = sc.sceneDates;
-        InitScene(name, sceneDates);
-    }
-
-    /// <summary>
-    /// 场景实例初始化
-    /// </summary>
-    /// <param name="name"></param>
-    /// <param name="sceneDates"></param>
-    private void InitScene(string name, params object[] sceneDates)
-    {
-        GameObject scene = new GameObject(name);
-        scene.transform.parent = parentObj;
-        scene.transform.localPosition = Vector3.zero;
-        scene.transform.localEulerAngles = Vector3.zero;
-        scene.transform.localScale = Vector3.one;
-        SceneBase sb = scene.AddComponent(Type.GetType(name)) as SceneBase;
-        sb.sceneInit(sceneDates);
-
-        if (prevScene != null)
-        {
-            UnityEngine.Object.Destroy(prevScene);
-        }
-
-        prevScene = scene;
+        Sequencer(sceneType, sceneDates);
     }
 
     #endregion

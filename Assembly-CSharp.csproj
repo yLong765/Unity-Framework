@@ -48,13 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Framework\ResourcesMgr\ResMgr.cs" />
      <Compile Include="Assets\Scripts\Framework\UGUIEventListener\UIOnClickListener.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\PanelBase.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\SceneBase.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\SceneLogin.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\SceneMain.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\SceneMgr.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\SceneTest.cs" />
-     <Compile Include="Assets\Scripts\Framework\UIFramework\UIBase.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Core\Base\PanelBase.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Core\Base\SceneBase.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Core\Base\UIBase.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Core\Mgr\PanelMgr.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Core\Mgr\SceneMgr.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Panels\PanelTest.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Scenes\SceneLogin.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Scenes\SceneMain.cs" />
+     <Compile Include="Assets\Scripts\Framework\UIFramework\Scenes\SceneTest.cs" />
      <Compile Include="Assets\test.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/work/Unity 5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

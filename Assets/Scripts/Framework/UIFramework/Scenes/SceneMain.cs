@@ -27,6 +27,10 @@ public class SceneMain : SceneBase {
         {
             SceneMgr.Instance.Sequencer(SceneType.SceneTest);
         }
+        else if (BtObject.name.Equals("BtOpenPanel"))
+        {
+            PanelMgr.Instance.openPanel(PanelType.PanelTest);
+        }
     }
 
 }

@@ -8,11 +8,13 @@ public class SceneLogin : SceneBase {
 
     protected override void InitDate()
     {
+        //初始化皮肤
         setSkinPath("UI/Scene/" + SceneType.SceneLogin.ToString());
     }
 
     protected override void InitViewDate()
     {
+        //绑定界面UI
         playerName = skin.transform.Find("loginBackground/playerName").GetComponent<InputField>();
         warnText = skin.transform.Find("warnText").GetComponent<Text>();
     }
