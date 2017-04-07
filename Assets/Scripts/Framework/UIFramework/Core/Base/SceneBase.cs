@@ -16,9 +16,14 @@ public class SceneBase : UIBase {
     public void sceneInit(params object[] _sceneDates)
     {
         sceneDates = _sceneDates;
+        SceneMgr.Instance.AddListener(EventCode.toScene, this);
         Init();
     }
-
+    
+    void OnDestroy()
+    {
+        SceneMgr.Instance.DelListener(EventCode.toScene, this);
+    }
 }
 
 /// <summary>

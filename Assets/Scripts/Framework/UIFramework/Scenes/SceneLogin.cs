@@ -36,6 +36,11 @@ public class SceneLogin : SceneBase {
         }
     }
 
+    protected override void resEvent(object[] message)
+    {
+        Debug.Log("Login: " + message[0]);
+    }
+
     private bool NameChick(string name)
     {
         //正则表达式

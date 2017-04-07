@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class UIBase : MonoBehaviour
+public class UIBase : MonoBehaviour, IEventListener
 {
     #region 定义参数
 
@@ -87,6 +88,22 @@ public class UIBase : MonoBehaviour
     /// </summary>
     /// <param name="BtObject">点击按钮的物体</param>
     protected virtual void onClick(GameObject BtObject) { }
+    /// <summary>
+    /// 响应事件
+    /// </summary>
+    /// <param name="message">信息</param>
+    protected virtual void resEvent(object[] message) { }
 
     #endregion
+
+    /// <summary>
+    /// 接收事件
+    /// </summary>
+    /// <param name="message"></param>
+    public void Event(params object[] message)
+    {
+        resEvent(message);
+    }
+
+    
 }

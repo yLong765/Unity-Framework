@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneMgr
+public class SceneMgr : EventNode
 {
     #region 单例&初始化
 
@@ -80,7 +80,6 @@ public class SceneMgr
         }
 
         prevScene = scene;
-
         
     }
 

@@ -33,4 +33,9 @@ public class SceneMain : SceneBase {
         }
     }
 
+    protected override void resEvent(object[] message)
+    {
+        Debug.Log("Main: " + message[0]);
+    }
+
 }

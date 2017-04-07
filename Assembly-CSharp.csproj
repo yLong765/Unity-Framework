@@ -46,6 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MessageTest.cs" />
+     <Compile Include="Assets\Scripts\Framework\EventFramework\EventNode.cs" />
+     <Compile Include="Assets\Scripts\Framework\EventFramework\IEventListener.cs" />
      <Compile Include="Assets\Scripts\Framework\ResourcesMgr\ResMgr.cs" />
      <Compile Include="Assets\Scripts\Framework\UGUIEventListener\UIOnClickListener.cs" />
      <Compile Include="Assets\Scripts\Framework\UIFramework\Core\Base\PanelBase.cs" />
@@ -57,6 +60,7 @@
      <Compile Include="Assets\Scripts\Framework\UIFramework\Scenes\SceneLogin.cs" />
      <Compile Include="Assets\Scripts\Framework\UIFramework\Scenes\SceneMain.cs" />
      <Compile Include="Assets\Scripts\Framework\UIFramework\Scenes\SceneTest.cs" />
+     <Compile Include="Assets\mouseController.cs" />
      <Compile Include="Assets\test.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/work/Unity 5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
