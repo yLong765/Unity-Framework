@@ -3,7 +3,6 @@ Unity核心框架合集（陆续更新），框架讲解文章 http://www.cnblog
 
 ## 2017.12.23更新
 * 加入对象池类，分为三种对象：已使用对象、未使用对象和自动回收对象
-
 * 加入基于Mono的单例管理类，初始化物体位置和旋转都为默认点
 * 修改ResMgr的用单例类
 * 修改ObjectPool用单例类，ObjectPool在Awake中调用Instance会形成自循环，所以修改了Awake中代码
@@ -17,7 +16,6 @@ Unity核心框架合集（陆续更新），框架讲解文章 http://www.cnblog
 
 ### 消息机制
 * EventNode：被监听者，可以给监听者发送消息
-  
 * IEventListener：监听者实现接口
 
 ### 对象池
