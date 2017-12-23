@@ -2,27 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResMgr : MonoBehaviour
+public class ResMgr : MonoSingletonMgr<ResMgr>
 {
-    #region Singleton
-
-    private static ResMgr _Instance;
-    public static ResMgr Instance
-    {
-        get
-        {
-            if (_Instance == null)
-            {
-                GameObject obj = new GameObject("_ResMgr");
-                DontDestroyOnLoad(obj);
-                _Instance = obj.AddComponent<ResMgr>();
-            }
-            return _Instance;
-        }
-    }
-
-    #endregion
-
     #region 定义参数
 
     /// <summary>
