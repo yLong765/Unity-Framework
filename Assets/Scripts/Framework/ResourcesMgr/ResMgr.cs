@@ -73,9 +73,6 @@ public class ResMgr : MonoBehaviour
     public GameObject LoadGameObject(string path, bool isCache)
     {
         GameObject go = Instantiate(Load<GameObject>(path, isCache)) as GameObject;
-        go.transform.localPosition = Vector3.zero;
-        go.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        go.transform.localScale = Vector3.one;
         return go;
     }
 
