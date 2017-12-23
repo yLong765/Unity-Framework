@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResMgr : MonoBehaviour
 {
-    #region 单例
+    #region Singleton
 
     private static ResMgr _Instance;
     public static ResMgr Instance
@@ -13,9 +13,9 @@ public class ResMgr : MonoBehaviour
         {
             if (_Instance == null)
             {
-                GameObject go = new GameObject("_ResMgr");
-                DontDestroyOnLoad(go);
-                _Instance = go.AddComponent<ResMgr>();
+                GameObject obj = new GameObject("_ResMgr");
+                DontDestroyOnLoad(obj);
+                _Instance = obj.AddComponent<ResMgr>();
             }
             return _Instance;
         }
