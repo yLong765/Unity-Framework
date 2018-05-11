@@ -1,5 +1,5 @@
 # Unity-Framework
-Unity核心框架合集（陆续更新），框架讲解文章 http://www.cnblogs.com/SHOR/p/6672185.html
+Unity核心框架合集（陆续更新与维护），框架讲解文章 http://www.cnblogs.com/SHOR/p/6672185.html
 
 ## 2017.12.23更新
 * 加入对象池类，分为三种对象：已使用对象、未使用对象和自动回收对象
