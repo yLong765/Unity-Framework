@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingletonMgr : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+public class SingletonMgr<T> where T : new()
+{
+    private static T _Instance;
+	public static T Instance
+	{
+		get
+		{
+			if (_Instance == null)
+			{
+                _Instance = new T();
+            }
+            return _Instance;
+        }
 	}
 }
