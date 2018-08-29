@@ -7,6 +7,10 @@ Unity核心框架合集（陆续更新与维护），框架讲解[文章](http:/
 * 修改ResMgr脚本，使用单例管理类
 * 修改ObjectPool用单例类，ObjectPool在Awake中调用Instance会形成自循环，所以修改了Awake中代码
 
+## 2018.8.28更新
+* 重写MonoSingleton，修复Editor模式调用时产生多实例的问题
+* 可用 Create 方法初始化
+
 ## 框架
 ### UI框架
 * 看讲解文章
@@ -24,7 +28,3 @@ Unity核心框架合集（陆续更新与维护），框架讲解[文章](http:/
 ### 单例管理
 * MonoSingletonMgr：基于mono的单例管理
 * SingletonMgr：基于C#的单例管理
-
-## 2018.8.28更新
-* 重写MonoSingleton，修复Editor模式调用时产生多实例的问题
-* 可用 Create 方法初始化
